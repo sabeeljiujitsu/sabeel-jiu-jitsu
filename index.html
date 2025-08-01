@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabeel Jiu Jitsu</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the Inter font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+        }
+        /* Custom focus style for inputs */
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* Tailwind blue-500 with transparency */
+            border-color: #3b82f6; /* Tailwind blue-500 */
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl w-full max-w-2xl">
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6">Sabeel Jiu Jitsu</h1>
+
+        <div class="flex justify-center mb-6 space-x-4">
+            <button id="adultBtn" class="px-6 py-3 rounded-lg font-medium text-lg transition-colors duration-200 bg-blue-600 text-white shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                Adult Registration
+            </button>
+            <button id="childBtn" class="px-6 py-3 rounded-lg font-medium text-lg transition-colors duration-200 bg-gray-200 text-gray-700 shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                Child Registration
+            </button>
+        </div>
+
+        <!-- Adult Registration Form -->
+        <form id="adultForm" class="space-y-4" method="POST" action="https://script.google.com/macros/s/AKfycbyK0R4qHdXqKtQcuBolVeobFipOSurXXQrUEAjR5ys23XqiEjrcecGNKCEesHcUqI60/exec" target="no-script-frame">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4">Adult Registration</h2>
+            <!-- Hidden field to identify form type -->
+            <input type="hidden" name="formType" value="adult">
+
+            <div>
+                <label for="adultFullName" class="block text-gray-700 text-sm font-medium mb-1">Full Name</label>
+                <input type="text" id="adultFullName" name="fullName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+
+            <div>
+                <label for="adultDOB" class="block text-gray-700 text-sm font-medium mb-1">Date of Birth</label>
+                <input type="date" id="adultDOB" name="dob" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+
+            <div>
+                <label for="adultEmail" class="block text-gray-700 text-sm font-medium mb-1">Email</label>
+                <input type="email" id="adultEmail" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+
+            <div>
+                <label for="adultPhone" class="block text-gray-700 text-sm font-medium mb-1">Phone Number</label>
+                <input type="tel" id="adultPhone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+
+            <div>
+                <label for="adultAddress" class="block text-gray-700 text-sm font-medium mb-1">Address</label>
+                <textarea id="adultAddress" name="address" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required></textarea>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="adultEmergencyName" class="block text-gray-700 text-sm font-medium mb-1">Emergency Contact Name</label>
+                    <input type="text" id="adultEmergencyName" name="emergencyName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+                </div>
+                <div>
+                    <label for="adultEmergencyPhone" class="block text-gray-700 text-sm font-medium mb-1">Emergency Contact Phone</label>
+                    <input type="tel" id="adultEmergencyPhone" name="emergencyPhone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+                </div>
+            </div>
+
+            <div>
+                <label for="adultMedical" class="block text-gray-700 text-sm font-medium mb-1">Any Medical Conditions/Allergies?</label>
+                <textarea id="adultMedical" name="medicalConditions" rows="2" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+            </div>
+
+            <!-- New payment confirmation checkbox -->
+            <div class="flex items-start">
+                <div class="flex items-center h-5 mt-1">
+                    <input id="adultPaymentConfirm" name="paymentConfirmed" type="checkbox"
+                           class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
+                </div>
+                <div class="ml-3 text-sm">
+                    <label for="adultPaymentConfirm" class="font-medium text-gray-700">
+                        I confirm that I have made the bank transfer payment.
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-green-700 transition-colors duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                Register
+            </button>
+
+            <div class="mt-6 p-4 bg-gray-100 rounded-lg border border-gray-200">
+                <h3 class="text-xl font-semibold text-gray-700 mb-3">Payment by Bank Transfer</h3>
+                <p class="text-gray-600 mb-2">Please make a bank transfer to the following account after submitting your registration:</p>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    <li><strong>Bank Name:</strong> Starling</li>
+                    <li><strong>Account Name:</strong> Mohammad Malik</li>
+                    <li><strong>Account Number:</strong> 46724659</li>
+                    <li><strong>Sort Code:</strong> 60-83-71</li>
+                    <li><strong>Reference:</strong> Your Full Name (e.g., "JohnDoeReg")</li>
+                </ul>
+                <p class="text-gray-600 mt-3 text-sm">Your registration will be confirmed upon receipt of payment.</p>
+            </div>
+        </form>
+
+        <!-- Child Registration Form (initially hidden) -->
+        <form id="childForm" class="space-y-4 hidden" method="POST" action="https://script.google.com/macros/s/AKfycbyK0R4qHdXqKtQcuBolVeobFipOSurXXQrUEAjR5ys23XqiEjrcecGNKCEesHcUqI60/exec" target="no-script-frame">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4">Child Registration</h2>
+            <!-- Hidden field to identify form type -->
+            <input type="hidden" name="formType" value="child">
+
+            <div>
+                <label for="childFullName" class="block text-gray-700 text-sm font-medium mb-1">Child's Full Name</label>
+                <input type="text" id="childFullName" name="childFullName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+
+            <div>
+                <label for="childDOB" class="block text-gray-700 text-sm font-medium mb-1">Child's Date of Birth</label>
+                <input type="date" id="childDOB" name="childDOB" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+
+            <h3 class="text-xl font-medium text-gray-700 mt-6 mb-4">Parent/Guardian Information</h3>
+            <div>
+                <label for="parentFullName" class="block text-gray-700 text-sm font-medium mb-1">Parent/Guardian Full Name</label>
+                <input type="text" id="parentFullName" name="parentFullName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+
+            <div>
+                <label for="parentEmail" class="block text-gray-700 text-sm font-medium mb-1">Parent/Guardian Email</label>
+                <input type="email" id="parentEmail" name="parentEmail" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+
+            <div>
+                <label for="parentPhone" class="block text-gray-700 text-sm font-medium mb-1">Parent/Guardian Phone Number</label>
+                <input type="tel" id="parentPhone" name="parentPhone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="childEmergencyName" class="block text-gray-700 text-sm font-medium mb-1">Emergency Contact Name (Non-Parent)</label>
+                    <input type="text" id="childEmergencyName" name="emergencyName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+                </div>
+                <div>
+                    <label for="childEmergencyPhone" class="block text-gray-700 text-sm font-medium mb-1">Emergency Contact Phone (Non-Parent)</label>
+                    <input type="tel" id="childEmergencyPhone" name="emergencyPhone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+                </div>
+            </div>
+
+            <div>
+                <label for="childMedical" class="block text-gray-700 text-sm font-medium mb-1">Any Medical Conditions/Allergies for Child?</label>
+                <textarea id="childMedical" name="medicalConditions" rows="2" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+            </div>
+
+            <!-- New payment confirmation checkbox for child form -->
+            <div class="flex items-start">
+                <div class="flex items-center h-5 mt-1">
+                    <input id="childPaymentConfirm" name="paymentConfirmed" type="checkbox"
+                           class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
+                </div>
+                <div class="ml-3 text-sm">
+                    <label for="childPaymentConfirm" class="font-medium text-gray-700">
+                        I confirm that I have made the bank transfer payment.
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-green-700 transition-colors duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                Register Child
+            </button>
+
+            <div class="mt-6 p-4 bg-gray-100 rounded-lg border border-gray-200">
+                <h3 class="text-xl font-semibold text-gray-700 mb-3">Payment by Bank Transfer</h3>
+                <p class="text-gray-600 mb-2">Please make a bank transfer to the following account after submitting your registration:</p>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    <li><strong>Bank Name:</strong> Starling</li>
+                    <li><strong>Account Name:</strong> Mohammad Malik</li>
+                    <li><strong>Account Number:</strong> 46724659</li>
+                    <li><strong>Sort Code:</strong> 60-83-71</li>
+                    <li><strong>Reference:</strong> Child's Full Name (e.g., "JaneDoeChildReg")</li>
+                </ul>
+                <p class="text-gray-600 mt-3 text-sm">Your registration will be confirmed upon receipt of payment.</p>
+            </div>
+        </form>
+
+        <!-- Hidden iframe to prevent page reload on form submission -->
+        <iframe name="no-script-frame" id="no-script-frame" style="display:none;"></iframe>
+
+        <!-- Custom Message Box for Alerts -->
+        <div id="messageBox" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center p-4 hidden">
+            <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full text-center">
+                <h3 id="messageTitle" class="text-xl font-semibold text-gray-800 mb-3"></h3>
+                <p id="messageContent" class="text-gray-600 mb-6"></p>
+                <button id="messageCloseBtn" class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    OK
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loadingIndicator" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center p-4 hidden">
+            <div class="flex flex-col items-center">
+                <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
+                <p class="text-white text-lg mt-4">Submitting registration...</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        // Get references to buttons and forms
+        const adultBtn = document.getElementById('adultBtn');
+        const childBtn = document.getElementById('childBtn');
+        const adultForm = document.getElementById('adultForm');
+        const childForm = document.getElementById('childForm');
+
+        // Get references to message box elements
+        const messageBox = document.getElementById('messageBox');
+        const messageTitle = document.getElementById('messageTitle');
+        const messageContent = document.getElementById('messageContent');
+        const messageCloseBtn = document.getElementById('messageCloseBtn');
+
+        // Get reference to loading indicator
+        const loadingIndicator = document.getElementById('loadingIndicator');
+
+        // Get reference to the hidden iframe
+        const noScriptFrame = document.getElementById('no-script-frame');
+
+        // Function to display custom message box
+        function showMessage(title, content) {
+            messageTitle.textContent = title;
+            messageContent.textContent = content;
+            messageBox.classList.remove('hidden');
+        }
+
+        // Function to show/hide loading indicator
+        function showLoading(show) {
+            if (show) {
+                loadingIndicator.classList.remove('hidden');
+            } else {
+                loadingIndicator.classList.add('hidden');
+            }
+        }
+
+        // Event listener for message box close button
+        messageCloseBtn.addEventListener('click', () => {
+            messageBox.classList.add('hidden');
+        });
+
+        // Function to switch between forms
+        function showForm(formToShow) {
+            if (formToShow === 'adult') {
+                adultForm.classList.remove('hidden');
+                childForm.classList.add('hidden');
+                adultBtn.classList.remove('bg-gray-200', 'text-gray-700');
+                adultBtn.classList.add('bg-blue-600', 'text-white');
+                childBtn.classList.remove('bg-blue-600', 'text-white');
+                childBtn.classList.add('bg-gray-200', 'text-gray-700');
+            } else {
+                adultForm.classList.add('hidden');
+                childForm.classList.remove('hidden');
+                childBtn.classList.remove('bg-gray-200', 'text-gray-700');
+                childBtn.classList.add('bg-blue-600', 'text-white');
+                adultBtn.classList.remove('bg-blue-600', 'text-white');
+                adultBtn.classList.add('bg-gray-200', 'text-gray-700');
+            }
+        }
+
+        // Event listeners for form selection buttons
+        adultBtn.addEventListener('click', () => showForm('adult'));
+        childBtn.addEventListener('click', () => showForm('child'));
+
+        // Handle form submission via the hidden iframe
+        function handleFormSubmission(event) {
+            // Check if the payment confirmation checkbox is checked before submitting
+            const form = event.target;
+            const paymentCheckbox = form.querySelector('[name="paymentConfirmed"]');
+            if (paymentCheckbox && !paymentCheckbox.checked) {
+                showMessage('Error', 'Please confirm that you have made the payment before submitting.');
+                event.preventDefault(); // Stop the form from submitting
+                return;
+            }
+
+            showLoading(true);
+            // The form will submit to the target iframe, preventing a full page reload.
+            // The Apps Script will return a simple HTML response that the iframe will load.
+            // We can listen for the iframe's load event to know when the submission is "complete".
+            noScriptFrame.onload = function() {
+                showLoading(false);
+                showMessage('Registration Submitted!', 'Your registration has been sent. Please complete the payment via bank transfer.');
+                form.reset(); // Clear the form
+                noScriptFrame.onload = null; // Remove the handler to prevent multiple calls
+            };
+        }
+
+        // Event listeners for form submissions
+        adultForm.addEventListener('submit', handleFormSubmission);
+        childForm.addEventListener('submit', handleFormSubmission);
+
+        // Initialize with adult form visible
+        document.addEventListener('DOMContentLoaded', () => {
+            showForm('adult');
+        });
+    </script>
+</body>
+</html>
